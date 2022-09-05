@@ -1,0 +1,6 @@
+[target]
+localhost
+
+[bet]
+192.168.0.107 remote_user=pi ansible_python_interpreter=/usr/bin/python3
+

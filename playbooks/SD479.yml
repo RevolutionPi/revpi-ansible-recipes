@@ -1,0 +1,27 @@
+---
+- name: RevPi as Switch
+  hosts: bet
+  tasks:
+    - name: Copy file src './files/interfaces' dest '/etc/network/interfaces
+      become: yes
+      copy:
+        src: ./files/interfaces
+        dest: /etc/network/interfaces
+    - name: apt update cache and install bridge-utils
+      become: yes
+      ansible.builtin.apt:
+        name: bridge-utils
+        update_cache: yes
+    - name: disable dhcpcd.service
+      become: yes
+      ansible.builtin.service:
+        name: dhcpcd.service
+        enabled: no
+    - name: enable networking
+      become: yes
+      ansible.builtin.service:
+        name: networking
+        enabled: yes
+    - name: Reboot
+      become: yes
+      reboot:
