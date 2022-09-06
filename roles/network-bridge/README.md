@@ -14,9 +14,28 @@ A simple role for network bridge configuration on Revolution Pi devices.
 
 ## Usage
 
+**Before you can use this role, you have to clone the `roles` folder into your ansible projesct.**
+
+Simple usage with default values:
 ```yaml
 ---
 - hosts: revpi
   roles:
     - network-bridge
+```
+
+Full-blown example with custom configuration:
+```yaml
+---
+- hosts: revpi
+  roles:
+    - role: network-bridge
+      vars:
+        bridge_name: my-bridge
+        bridge_ports:
+          - eth0
+          - eth1
+        bridge_network_type: static
+        bridge_network_address: 172.16.0.10/16
+        bridge_network_gateway: 172.16.0.1
 ```
