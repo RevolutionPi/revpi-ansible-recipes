@@ -1,0 +1,25 @@
+- name: Install required packages
+  apt:
+    name: bridge-utils
+    update_cache: True
+  become: True
+
+- name: Create interface configuration
+  template:
+    src: bridge.j2
+    dest: /etc/network/interfaces.d/bridge
+  notify: restart networking
+  become: True
+
+- name: Ensure networking is enabled
+  service:
+    name: networking
+    enabled: True
+  become: True
+
+- name: Disable dhcpcd
+  service:
+    name: dhcpcd
+    state: stopped
+    enabled: False
+  become: True

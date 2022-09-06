@@ -1,0 +1,19 @@
+galaxy_info:
+  role_name: network-bridge
+  author: Dirk Conzelmann, Nicolai Buchwitz
+  description: Simple role for bridge network configuration on Revolution Pi
+  company: KUNBUS GmbH
+  issue_tracker_url: https://github.com/RevolutionPi/revpi-ansible-recipes/issues
+  license: BSD
+  min_ansible_version: 2.5
+  platforms:
+    - name: Debian
+      version:
+        - 9
+        - 10
+        - 11
+  galaxy_tags:
+    - network
+    - bridge
+    - RevPi
+dependencies: []

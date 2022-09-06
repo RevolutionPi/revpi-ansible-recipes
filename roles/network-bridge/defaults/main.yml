@@ -1,0 +1,9 @@
+bridge_name: br0
+bridge_ports:
+  - eth0
+  - eth1
+bridge_network_type: dhcp
+#bridge_network_type: static
+#bridge_network_address: 192.168.42.42/24
+#bridge_network_gateway: 192.168.42.1
+

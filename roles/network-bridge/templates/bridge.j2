@@ -1,0 +1,15 @@
+# Bridge member ports
+{% for port in bridge_ports %}
+iface {{ port }} inet manual
+{% endfor %}
+
+# Bridge configuration
+auto {{ bridge_name }}
+iface {{ bridge_name }} inet {{ bridge_network_type }}
+  bridge_ports {{ bridge_ports | join(' ') }}
+{% if bridge_network_address is defined %}
+  address {{ bridge_network_address }}
+{% endif %}
+{% if bridge_network_gateway is defined %}
+  address {{ bridge_network_gateway }}
+{% endif %}
