@@ -1,7 +1,0 @@
-[target]
-localhost
-
-[bet]
-# enter Ip-address
-xxx.xxx.x.xxx remote_user=pi ansible_python_interpreter=/usr/bin/python3
-
