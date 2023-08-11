@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Example Docker demo that toggles an output through the process image.
+Example Docker demo that switches the A1 LED green through the process image.
 
 Requirements
 ------------
