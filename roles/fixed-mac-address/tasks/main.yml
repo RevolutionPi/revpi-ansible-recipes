@@ -1,0 +1,17 @@
+---
+# tasks file for fixed-mac-address
+  - name: copy script 'static_pibridge_mac.sh' and set permissions
+    ansible.builtin.copy:
+      src: ./files/static_pibridge_mac.sh
+      dest: /home/pi
+      owner: pi
+      group: pi
+      mode:  0744
+
+  - name: run script 'static_pibridge_mac.sh'
+    ansible.builtin.command: /home/pi/static_pibridge_mac.sh
+    become: true
+
+  - name: Reboot device
+    ansible.builtin.reboot:
+    become: true
